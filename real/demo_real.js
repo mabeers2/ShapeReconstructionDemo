@@ -1,7 +1,8 @@
-import './style.css'
+import './../css/style.css'
 import * as THREE from 'three';
 import { Matrix } from 'ml-matrix';
-import experiment_data from './demo_data.json' assert {type: 'json'};
+import experiment_data from './../assets/demo_data.json' assert {type: 'json'};
+console.log(experiment_data)
 
 // Define some initial variables
 const KEYPRESS_SPACEBAR = 0x20;
@@ -242,7 +243,7 @@ function init(){
   material.shininess = 10;
   material.side = THREE.DoubleSide;
   material.wireframe = false;
-  const texture = new THREE.TextureLoader().load( 'texture2.jpg' );
+  const texture = new THREE.TextureLoader().load( './../assets/texture2.jpg' );
   material.bumpMap = texture
   material.map = texture
   material.bumpScale = 1. 
@@ -319,7 +320,7 @@ function gather_sub_data(){
     }
   }
   localStorage.setItem("you", JSON.stringify(subject_responses));
-  window.location.href = "./numeric_summary.html"
+  window.location.href = "./../summary/index.html"
 }
 
 

@@ -1,7 +1,7 @@
-import './style.css'
+import './../css/style.css'
 import * as THREE from 'three';
 import { Matrix } from 'ml-matrix';
-import experiment_data from './demo_data.json' assert {type: 'json'};
+import experiment_data from './../assets/demo_data.json' assert {type: 'json'};
 import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
 import { LineSegments2 } from 'three/addons/lines/LineSegments2.js';
 import { LineSegmentsGeometry } from 'three/addons/lines/LineSegmentsGeometry.js';
@@ -325,7 +325,7 @@ function gather_sub_data(){
     }
   }
   localStorage.setItem("you", JSON.stringify(subject_responses));
-  window.location.href = "./numeric_summary.html"
+  window.location.href = "./../summary/index.html"
 }
 
 function onWindowResize() {

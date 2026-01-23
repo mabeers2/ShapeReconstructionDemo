@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="splash_style.css">
+    <link rel="stylesheet" href="./../css/splash_style.css">
     <title>Summary</title>
 
   </head>
@@ -12,7 +12,7 @@
     <div id="plot-container" class="main_text"></div>
     <script type="module">
       import * as Plot from "@observablehq/plot";
-      import sub_data from './sub_data.json' assert {type: 'json'};
+      import sub_data from './../assets/sub_data.json' assert {type: 'json'};
       let obj_type = localStorage.getItem("obj_type");
       var you = JSON.parse(window.localStorage.getItem("you"));
       // const jsonData = {
