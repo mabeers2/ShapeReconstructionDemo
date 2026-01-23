@@ -243,10 +243,10 @@ function init(){
   material.shininess = 10;
   material.side = THREE.DoubleSide;
   material.wireframe = false;
-  const texture = new THREE.TextureLoader().load( './texture2.jpg' );
-  material.bumpMap = texture
-  material.map = texture
-  material.bumpScale = 1. 
+  // const texture = new THREE.TextureLoader().load( './texture2.jpg' );
+  // material.bumpMap = texture
+  // material.map = texture
+  // material.bumpScale = 1. 
   material.fog=false;
 
   // Define Base Geometry
