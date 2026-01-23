@@ -1,0 +1,67 @@
+body {
+    max-width: 650px;
+    margin: auto;
+    padding-top: 20px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    font-family: sans-serif;
+}
+
+flex-container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+}
+
+.flex-container button {
+  background-color: #1fa13d;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 4px 2px;
+  text-align: center;
+  border: none;
+  border-style: solid;
+  padding: 15px 15px;
+  border-radius: 10px;
+}
+
+.flex-container button:hover {
+  background-color: #156b29;
+}
+
+
+.flex-container button:disabled {
+  background-color: #1fa13d; /* Gray background for disabled state */
+  color: white;             /* Gray text color */
+  cursor: not-allowed;        /* Change cursor to indicate no action */
+  opacity: 0.6;               /* Add some transparency */
+}
+
+
+.numeric_button {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 4px 2px;
+  text-align: center;
+  border: none;
+  border-style: none;
+  padding: 15px 15px;
+  border-radius: 10px;
+  z-index:6;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+
+
+.numeric_button:hover {
+  background-color: #156b29;
+}
+
+

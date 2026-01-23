@@ -1,6 +1,19 @@
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { defineConfig } from "vite";
 
-export default defineConfig({
-	base:"/ShapeReconstructionDemo/"
-});
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
+export default defineConfig({
+  base:"/ShapeReconstructionDemo/",
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        real: resolve(__dirname, 'real/index.html'),
+        polyhedron: resolve(__dirname, 'polyhedron/index.html'),
+        summary: resolve(__dirname, 'summary/index.html')
+      },
+    },
+  },
+})
