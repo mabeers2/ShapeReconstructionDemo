@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="splash_style.css">
+    <title>Summary</title>
+
+  </head>
+  <body>
+    <h1> Summary of Results </h1>
+    <div id="plot-container" class="main_text"></div>
+    <script type="module">
+      import * as Plot from "@observablehq/plot";
+      import sub_data from './sub_data.json' assert {type: 'json'};
+      let obj_type = localStorage.getItem("obj_type");
+      var you = JSON.parse(window.localStorage.getItem("you"));
+      // const jsonData = {
+      //   "Subject": ["S1", "S1", "S1", "S2", "S2", "S2"],
+      //   "Slant": [45, 32,22, 33,31,22], 
+      //   "Angle s": [33,14,8,33,14,8]
+      // };
+      // const jsonData2 = [
+      //   {"Subject":"S1", "Slant":45, "Angle s":33},
+      //   {"Subject":"S1", "Slant":32, "Angle s":14},
+      //   {"Subject":"S1", "Slant":22, "Angle s":8},
+      //   {"Subject":"S2", "Slant":33, "Angle s":33},
+      //   {"Subject":"S2", "Slant":31, "Angle s":14},
+      //   {"Subject":"S2", "Slant":22, "Angle s":8},
+      // ]
+      var plot_data = [...sub_data[obj_type], ...you]
+      const plot = Plot.plot({
+          marginBottom: 50,
+          marginTop: 40,
+          marginLeft:50,
+          x: {nice:true,labelOffset: 40, label: "Angle s (Degrees)"},
+          y: {nice:true,labelOffset: 50, label: "Angle s (Degrees)"},
+          style: {fontSize: "16px"},
+          color: {legend: true},
+          marks: [
+            Plot.ruleY([15], {stroke: "red", strokeDasharray: "4,4", label: "Veridical"}),
+            Plot.lineY(plot_data, {x: "Angle s", y: "Slant", stroke: "Subject", tip:false}),
+            Plot.frame()
+          ]
+        })
+      document.getElementById('plot-container').appendChild(plot)
+    </script>
+    <p>The veridical slant (15 Degrees) is shown as a dashed red line.</p>
+    <p>The constraints of bilateral symmetry and perspective theoretically yield a unique reconstruction when combined, but this relies on computation of a vanishing point. When angle s is larger, the vanishing point computation is more reliable and therefore perspective is a more reliable cue. On average the subjects reported slightly more veridical reconstructions as perspective information became more reliable. Did you? </p>
+    <p>Thank you for looking at this demo. </p>
+  </body>
+</html>
