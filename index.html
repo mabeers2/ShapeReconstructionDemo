@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo</title>
+    <link rel="stylesheet" crossorigin href="/ShapeReconstructionDemo/assets/index-CkgOg5CX.css">
+  </head>
+  <body>
+    <div class="main_text"></div>
+    <h1>Shape Reconstruction Experiment Demo</h1>
+    <hr>
+    <h2>Instructions</h2>
+    <p>On each trial of the shape reconstruction experiment, a subject was shown a static reference image and a rotating, adjustable, 3D shape. <i>The subject's task was to adjust the 3D shape until it matched their 3D percept of the static reference image.</i> The subject was instructed to pay attention to overall aspect ratios when making this judgment, rather than focusing on a particular part of the object.</p>
+    <h3>Keyboard Inputs</h3>
+    <ul>
+      <li>Press <b>W</b> or <b>S</b> to adjust the rotating 3D shape. </li>
+      <li>Press the <b>Space Bar</b> to advance to the next trial. </li>
+      <li>Press <b>P</b> to return to the previous trial.</li>
+    </ul>
+    <div class="flex-container">
+      <button class="button" onclick="begin_polyhedron()">Begin Demo 1 (Random Symmetrical Polyhedron)</button>
+      <button class="button" onclick="begin_real()">Begin Demo 2* (Real-World Object)</button>
+    </div>
+    <p><i>*This demo requires a fairly modern GPU to run smoothly.</i></p>
+    <hr>
+    <h2>Additional Background</h2>
+    <p>Here is some text about the one parameter family and a gif.  </p>
+    <!-- <script type="module" src="/src/main.js"></script> -->
+    <hr>
+    <h2>Frequently Asked Questions</h2>
+    <h4>Does the adjustable shape ever rotate to a position that matches the reference image?</h4>
+    <p>No, the adjustable shapes were rotated 60 degrees in depth relative to the reference shapes. They then rotated about a horizontal axis. This prevents the rotating shape from ever generating the reference image. In addition, the adjustable 3D shape has been uniformly size scaled relative to the reference shape and translated slightly. These manipulations encourage the subject to pay attention to the 3D shape, rather than trying to employ some shortcut based on comparing 2D images. </p>
+    <h4>Does memory influence a subject's 3D percept?</h4>
+    <p>In the experiment an object was shown from the same viewing direction (but different simulated viewing distances) three to five times. It is reasonable to ask if a subject's report when shown a particular object was influenced by their report when shown that same object earlier in the experiment. To try to limit the effect of memory, at least 15 trials showing different objects took place between presentations of the each object.  </p>
+    <h4>How can I exactly reproduce the experimental conditions?</h4>
+    <p>Arrange a 32" 4K monitor and the subject's position using a chin-forehead rest so that (1) the line from the center of  the monitor along it's normal points at the subject's eye and (2) the subject's eye is 20" from the monitor. Cover the subject's other eye with an eyepatch. The experiment was conducted in an otherwise dark room. </p>
+
+  <script>
+    function begin_polyhedron(){
+        localStorage.setItem("obj_type", "polyhedron");
+        location.href = './demo_polyhedron.html'
+    }
+      function begin_real(){
+        localStorage.setItem("obj_type", "real");
+        location.href = './demo_real.html'
+    }
+  </script>
+
+
+  </body>
+</html>
