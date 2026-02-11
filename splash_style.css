@@ -64,4 +64,38 @@ flex-container {
   background-color: #156b29;
 }
 
+.figure {
+  transition: 0.3s;
+  border-radius: 10px;
+  width:80%;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid black;
+}
+
+.text_container{
+  padding: 2px 16px;
+  text-align: center;
+}
+
+img.center {
+  display: block; 
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+
+.fig_container{
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;     
+}
+
+
+
+
+
+
 
