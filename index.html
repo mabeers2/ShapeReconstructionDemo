@@ -11,7 +11,8 @@
     <h1>Shape Reconstruction Experiment Demo</h1>
     <hr>
     <h2>Instructions</h2>
-    <p>On each trial of the shape reconstruction experiment, a subject was shown a static reference image and a rotating, adjustable, 3D shape. <i>The subject's task was to adjust the 3D shape until it matched their 3D percept of the static reference image.</i> The subject was instructed to pay attention to overall aspect ratios when making this judgment, rather than focusing on a particular part of the object.</p>
+    <p>On each trial of the shape reconstruction experiment, a subject was shown a static reference image and a rotating, adjustable, 3D shape. <i>The subject's task was to adjust the 3D shape until it matched their 3D percept of the static reference image.</i> Subjects were instructed to pay attention to overall aspect ratios when making this judgment, rather than focusing on a particular part of the object. Subjects performed the experiment monocularly.</p>
+    <p> A correct perspective image on the retina will occur when the eye is placed <math><mi>v</mi></math> inches from the center of the monitor along the monitor's normal. Viewing distance <math><mi>v</mi></math> should be whatever is necessary so that the largest image in the three demo trials occupies approximately 25 degrees of visual angle. If the largest image is <math><mi>x</mi></math> inches in diameter on your computer screen, then the viewing distance <math><mi>v</mi></math> should be <math><mi>v</mi><mo>=</mo><mfrac><mi>x</mi><mi>2tan(25/2)</mi></mfrac></math>.</p>
     <h3>Keyboard Inputs</h3>
     <ul>
       <li>Press <b>W</b> or <b>S</b> to adjust the rotating 3D shape. </li>
@@ -25,8 +26,26 @@
     <p><i>*This demo requires a fairly modern GPU to run smoothly.</i></p>
     <hr>
     <h2>Additional Background</h2>
-    <p>Here is some text about the one parameter family and a gif.  </p>
-    <!-- <script type="module" src="/src/main.js"></script> -->
+    <p>Monocular 3D reconstruction is an ill-posed inverse problem. It is ill-posed because an infinite number of 3D configurations could have generated any given 2D image. Animation 1 is intended to emphasize this point, showing a selection of 3D shapes projecting to the same image on the XY plane. Despite the fact that many 3D interpretations are possible, it is difficult to perceive anything but a rectangular prism when considering the image in the XY plane. The visual system is utilizing some a priori beliefs to select a single 3D interpretation when many are possible. Arguably the most important objective in the study of monocular 3D perception is to infer the constraints that the visual system employs to arrive at a unique and often accurate 3D interpretation.</p>
+    <div class="fig_container">
+      <div class = 'figure'> 
+        <img src="/cropped2.gif" alt="Many 3D Interpretations" class="center">
+        <div class='text_container'>
+          <p><b>Animation 1:</b> A single image, shown in the XY plane, may be produced by an infinite number of 3D configurations.</p>
+        </div>
+      </div>
+    </div>
+    <p>One constraint of particular importance is mirror symmetry. When a subject is shown an image of a mirror symmetrical object, very often their 3D percept is mirror symmetrical. Furthermore, symmetry is pervasive in the natural environment. Animals are bilaterally symmetrical because of the way they move. Parts of plants are radially symmetrical because of the way they grow. It is argued that symmetry is a key assumption the visual system makes in interpreting a single 2D image.</p>
+    <p>When provided an orthographic image of a mirror symmetrical object, the assumption of mirror symmetry reduces the set of possible 3D interpretations to a one parameter family. The one parameter family is visualized in Animation 2. Each of the symmetrical 3D shapes that could have generated the orthographic image is associated with a single parameter, the slant of its symmetry plane. Hence the name, 'one parameter family'. </p> 
+    <div class="fig_container">
+      <div class = 'figure'> 
+        <img src="/family.gif" alt="One parameter family" class="center">
+        <div class='text_container'>
+          <p><b>Animation 2:</b> Shown is the one parameter family associated with an orthographic image of a mirror symmetrical polyhedron. <i>Credit: Zygmunt Pizlo, Yunfeng Li, Tadamasa Sawada, Robert M. Steinman, Source: </i><a href="http://shapebook.psych.purdue.edu/2.2/">http://shapebook.psych.purdue.edu/2.2/</a> </p>
+        </div>
+      </div>
+    </div>
+    <p>In this experiment, the subject is provided a single perspective image of a symmetrical object, and asked to choose amongst the 3D shapes in the one parameter family associated with the orthographic image of the object. Animation 2 shows that each member of the one parameter family is a stretched version of another member of the one parameter family. One can therefore also think of a shape reconstruction experiment as an aspect ratio recovery experiment.</p>
     <hr>
     <h2>Frequently Asked Questions</h2>
     <h4>Does the adjustable shape ever rotate to a position that matches the reference image?</h4>
@@ -50,3 +69,5 @@
 
   </body>
 </html>
+
+
