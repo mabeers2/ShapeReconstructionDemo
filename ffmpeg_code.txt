@@ -1,0 +1,10 @@
+ffmpeg -i many_compatible.gif -vf "crop=900:1440:285:0" cropped.gif
+ffmpeg -y -i many_compatible.gif -vf "fps=15,scale=900:-1:flags=lanczos,palettegen" output_palette.png
+
+# Ended up using the two below
+ffmpeg -i many_compatible.gif -vf "crop=900:1440:285:0,scale=900:-1:flags=lanczos[x];[x][1:v]paletteuse" cropped.gif
+ffmpeg -y -i many_compatible.gif -i output_palette.png -lavfi "crop=900:1440:285:0,scale=900:-1:flags=lanczos[x];[x][1:v]paletteuse" cropped2.gif
+
+# somehow ffmpeg doesn't support ffmpeg by default - so instead do this and 
+ffmpeg -i many_compatible.gif -vcodec libwebp -filter:v fps=30 -lossless 0 -q:v 70 -loop 0 -preset picture -an cropped.webp
+gif2webp many_compatible.gif -o many_compatible.webp
